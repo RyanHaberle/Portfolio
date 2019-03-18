@@ -1,0 +1,24 @@
+
+<form action="" method="post">
+
+<input type = "text" name = "title" placeholder="* title" value= "<?php echo $_POST['title'] ?>"><br>
+
+<input type="text" name="fn" placeholder="* First Name"value="<?php echo $_POST['fn'] ?>"><br>
+
+<input type="text" name="ln" placeholder="* Last Name" value="<?php echo $_POST['ln'] ?>"><br>
+
+<input type="text" name="em" placeholder="E-mail" value="<?php echo $_POST['em'] ?>"><br>
+
+<input type = "text" name = "s" placeholder="Site" value="<?php echo $_POST['s'] ?>"><br><br>
+<input type="text" name="pn" placeholder="Cell Number" value="<?php echo $_POST['pn'] ?>"><br><br>
+<input type="text" name="hn" placeholder="Home Number" value="<?php echo $_POST['hn'] ?>"><br><br>
+<input type="text" name="on" placeholder="Office Number" value="<?php echo $_POST['on'] ?>"><br><br>
+<input type="text" name="tw" placeholder="Twitter URL" value="<?php echo $_POST['tw'] ?>"><br><br>
+<input type="text" name="fb" placeholder="Facebook URL" value="<?php echo $_POST['fb'] ?>"><br><br>
+<input type="file" name="pic" placeholder="Picture"value="<?php echo $_POST['pic'] ?>"><br><br>
+<input type="text" name="com" placeholder="Comment" value="<?php echo $_POST['com'] ?>"><br><br>
+<input type="submit" name="updateContact" value="Update Contact">
+    <br><div id="rePopText">If you entered the wrong contact to edit re enter below and their info will populate the in.</div>
+</form>
+
+<a href="/folder_view/vs.php?s=<?php echo __FILE__?>" target="_blank">View Source</a>
