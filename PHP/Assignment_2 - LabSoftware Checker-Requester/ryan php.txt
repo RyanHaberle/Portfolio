@@ -1,0 +1,64 @@
+<?php
+$labChosen = isset($_POST['chooseLab']) ? $_POST['chooseLab'] : '';
+$softwareChose = isset($_POST['chooseSoftware']) ? $_POST['chooseSoftware'] : '';
+$dropDownSelect = "";
+
+
+?>
+
+<form method="POST">
+
+
+    <select name='chooseLab' value = ""onchange='form.submit()'>
+        <option name = "empty" value="">Choose a lab to see what software is installed</option>
+        <option name = "c410" value="c410">C410</option>
+        <option name = "c418" value="c418">C418</option>
+        <option name = "c401" value="c401">C401</option>
+    </select>
+
+    <select name='chooseSoftware' onchange='form.submit()'>
+        <option name = "empty" value="Choose a Lab to see what software">Choose a program to see what labs it is installed in.</option>
+        <option name = "Visual Studio 2018" value="Visual Studio 2018">Visual Studio 2018</option>
+        <option name = "Unity" value="Unity">Unity</option>
+        <option name = "Net Beans" value="Net Beans">Net Beans</option>
+        <option name = "Unity" value="Unity">Unity</option>
+        <option name = "Net Beans" value="Net Beans">Net Beans</option>
+    </select>
+
+
+        <?php
+        if ($labChosen == "c418")
+        {
+            print "<br>"."Displaying C418";
+            // put QUERIES HERE.
+        }
+        if ($labChosen == "c410")
+        {
+            print "<br>"."Displaying C410 ";
+            //PUT QUERIES HERE
+        }
+        if ($labChosen == "c401")
+        {
+            // PUT QUERIES HERE
+            print "<br>"."Displaying C401";
+        }?>
+
+
+<?php
+    if ($softwareChose == "Visual Studio 2018")
+    {
+    print "<br>"."Displaying labs with $softwareChose";
+    }
+    if ($softwareChose == "Unity")
+    {
+    print "<br>"."Displaying labs with $softwareChose";
+    }
+    if ($softwareChose == "Net Beans")
+    {
+    print "<br>"."Displaying labs with $softwareChose";
+    }?><br><br>
+        <button type="submit" >Request Software</button>
+    </select>
+</form>
+
+<a href="adminLogin.php">Admin login.</a>

@@ -1,0 +1,27 @@
+*{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1{
+    padding-top: 15px;
+}
+
+hr{
+    border: 3px solid lightblue;
+    background-color: mintcream;
+}
+
+form{
+    display: inline;
+}
+
+.indexPara{
+    text-align: center;
+    padding-top: 20px;
+    font-size: large;
+}
+
+#position-left{
+    float: right;
+}
