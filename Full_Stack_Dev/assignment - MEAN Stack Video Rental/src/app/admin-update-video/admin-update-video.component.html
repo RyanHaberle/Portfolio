@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <form (ngSubmit)= "onSubmit()" class="form-signin" action= " http://localhost:3000/api/movieAdd" method="POST" >       
+    <h2 class="form-signin-heading">Update Video</h2>
+    <p>Title:</p> <input type="text" id="title" name="title"[(ngModel)] = title ><br>
+    <p>Running Time:</p><input type="text" id="duration" name="duration"[(ngModel)] = duration><br>
+    <p>Genre:</p>
+    
+    <select id="genre"name="genre" [(ngModel)] = genre>
+      <option value="comedy">Comedy</option>
+      <option value="drama">Drama</option>
+      <option value="Action">Action</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Science Fiction">Science Fiction</option>
+    </select>
+    <br>
+    <p>Rating:</p>
+    <select id="rating" name="rating" [(ngModel)] = rating>
+      <option value="1 Star">1 star</option>
+      <option value="2 Star">2 stars</option>
+      <option value="3 Star">3 stars</option>
+      <option value="4 Star">4 stars</option>
+      <option value="5 Start">5 stars</option>
+    </select>
+    <br>
+    <p>Director:</p> <input type="text" id="director" name="director" [(ngModel)] = director><br>
+    <p>Status:</p>
+
+    <select id="status" name="status" [(ngModel)] = status>
+      <option value="available">Available</option>
+      <option value="unavailable">Unavailable</option>
+    </select>
+    <br><br><br>
+    <button class="btn btn-outline-success my-2 my-sm-0 " routerLink="/adminVideoListing" routerLinkActive="active" type="submit">Back</button>   
+    <button class="btn btn-outline-success my-2 my-sm-0 " type="submit" >Add</button>   
+   
+  </form>
+</div>

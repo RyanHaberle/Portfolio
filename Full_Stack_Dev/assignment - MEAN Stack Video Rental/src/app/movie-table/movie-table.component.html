@@ -1,0 +1,40 @@
+
+  <button class="btn btn-outline-success my-2 my-sm-0 btn float-right" routerLink="/admin" routerLinkActive="active" type="submit">Admin Login</button>
+
+  <br><br>
+    <form class="form-inline" id = "filter">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <input class="form-control " type="text" placeholder="Search our Videos!" name="searchTerm"  [(ngModel)]="searchTerm" >
+           </div>
+        </div>
+      </div>
+      </form>
+      <br><br>
+
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>title</th>
+            <th>duration</th>
+            <th>genre</th>
+            <th>rating</th>
+            <th>director</th>
+            <th>status</th>
+          </tr>
+          
+        </thead>
+        <tbody>
+          <tr *ngFor="let movie of movies | searchByTitle:searchTerm ">
+             <td *ngFor="let col of columns " >
+               {{movie[col]}} 
+             </td>
+            <div *ngIf="movie.status == 'available'" >
+                <button class="btn btn-outline-success my-2 my-sm-0 " routerLink="/reserveVideo" routerLinkActive="active" type="submit">Reserve</button>
+             </div>
+          </tr>
+         
+        </tbody>
+      </table>

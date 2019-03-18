@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Reserve Video</h2>
+      <p>Title:</p> <label></label><br>
+      <p>Running Time:</p><br>
+      <p>Genre:</p><br>
+      <p>Rating:</p><br>
+      <p>Director:</p><br>
+      <p>Customer</p> 
+      <select>
+          <option  *ngFor="let customer of customers" value="volvo">{{customer.FirstName}} {{customer.LastName}} </option>
+         
+        </select>
+        
+      <button class="btn btn-outline-success my-2 my-sm-0 " routerLink="/browse" routerLinkActive="active" type="submit">Back</button>   
+      <button class="btn btn-outline-success my-2 my-sm-0 " type="submit">Reserve</button>   
+    </form>
+  </div>

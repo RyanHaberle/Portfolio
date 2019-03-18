@@ -1,0 +1,58 @@
+
+<button class="btn btn-outline-success" routerLink="/adminVideoListing" routerLinkActive="active" type="submit">Videos</button>
+<button class="btn btn-outline-success" routerLink="/adminCustomerListing" routerLinkActive="active" type="submit">Customers</button> 
+
+
+<button class="btn btn-outline-success my-2 my-sm-0 btn float-right" routerLink="/browse" routerLinkActive="active" type="submit">Logout</button>
+
+
+<form class="form-inline" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+       
+        <input class="form-control mr-sm-2" type="search"  placeholder="Search Videos" aria-label="Search" name="searchTerm"  [(ngModel)]="searchTerm">
+        <button class="btn btn-outline-success my-2 my-sm-0" (click) = searchMovies() type="submit">Search</button>
+        
+      
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+<button class="btn btn-outline-success"  routerLink="/adminAddVideo" routerLinkActive="active" type="submit">Add Video</button>
+
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns" >
+        {{col}}
+      </th>
+    </tr>
+    
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies | searchByTitle:searchTerm"   >
+        
+      <td *ngFor="let col of columns" >
+         {{movie[col]}} 
+  
+      </td>
+
+      <button  (click)= updateVideo() routerLink="/adminUpdateVideo" routerLinkActive="active" type="button">Update</button>
+      
+      <button >Delete</button> <br><br>
+    </tr>
+  </tbody>
+</table>
