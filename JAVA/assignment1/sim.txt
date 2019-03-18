@@ -1,0 +1,74 @@
+/*
+Ryan Haberle - 101094993
+ */
+package simulation_101094993;
+
+public class Simulation_101094993 {
+    
+    static private Account[] accountList = new Account[10];
+    static private int numAccounts = 0;
+    static private int maxAccount = 10;
+    static private int accountIndex = 0;
+    
+    public static void main(String[] args) {
+    accountList = new Account[];
+    
+    
+    addAccount(993823, 1200345.34, "Kevin Bacon");
+    addChequingAccount(446372, 73468.34,"Jason Mark", 1000.00);
+    addAccount(294735,5000.00,"Miles Joe");
+    addChequingAccount(882734,786.00,"Jane Austin", 4000.00);
+    addAccount(192703,23500.00,"Andrew Kein");
+    printAccounts();
+    //1)
+    if(findAccount(192703) != -1 ){
+       accountList[accountIndex].deposit(4000.00);
+    }
+    //2)
+    if(findAccount(882734) != -1 ){
+       accountList[accountIndex].withdraw(3000);
+    }
+    //3)
+    if(findAccount(993823) != -1 ){
+       accountList[accountIndex].transfer(accountList[findAccount(446372)], 100000.00);
+    }
+    //4)
+    if(findAccount(294735) != -1 ){
+       accountList[accountIndex].withdraw(9000);
+    }
+}  
+    
+    static private int findAccount(long accNum){  // finish this
+     
+        for( accountIndex  = 0;accountIndex<numAccounts;accountIndex++){
+            if(accNum == accountList[accountIndex].accountNum){
+                return accountIndex;
+            }
+        }
+        System.out.println("account not found");
+        return -1;
+    }
+    
+    private static boolean addChequingAccount(long accNum, double bal, String owner, double ovDraft){
+        ChecquingAccount c = new ChecquingAccount( accNum,  bal,  owner,  ovDraft);
+        accountList[numAccounts] = c;
+        numAccounts++;
+        return true;
+    }
+   
+    private static boolean addAccount(long accNum, double bal, String own){
+        Account a = new Account(accNum,  bal,  own);
+        accountList[numAccounts] = a;
+        numAccounts++;
+        return true;
+    }
+   
+    static private void printAccounts(){
+        int z = 0;
+        while(z<numAccounts){
+        System.out.println(accountList[z].toString());
+        z++;
+    }
+  }
+}
+

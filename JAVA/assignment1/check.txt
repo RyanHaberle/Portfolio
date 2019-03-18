@@ -1,0 +1,32 @@
+/*
+Ryan Haberle - 101094993
+ */
+package simulation_101094993;
+
+public class ChecquingAccount extends Account{
+    double overDraftLimit;
+    
+    public ChecquingAccount( long accountNum, double balance, String owner, double newOdLimit ){
+        super( accountNum,balance, owner);
+        this.overDraftLimit = newOdLimit ;
+    }
+    
+    @Override
+    public boolean withdraw(double amt){
+     if (balance > (overDraftLimit * -1)+ amt ) {
+         balance -= amt;
+        }
+        else{
+            System.out.println("no withdrawl done due to insufficent funds.");
+            return false;
+        }
+     return false;
+    }
+
+    @Override
+    public String toString(){
+    String s = "";
+    s += "ACCOUNT NUMBER: "+ accountNum +"\nOWNERS NAME: "+owner + "\nCURRENT BALANCE: "+"$"+balance+"\nOVER DRAFT LIMIT: " +"$"+ overDraftLimit+";
+    return s;
+    }
+}
